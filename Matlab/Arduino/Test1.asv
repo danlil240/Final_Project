@@ -1,0 +1,12 @@
+clear
+ard=arduino('COM5','Uno');
+configurePin(ard, "A5", "AnalogInput");
+i=1;
+t=zeros(100,1);
+val=t;
+while(i<100)
+val(i)=readVoltage(ard,"A5");
+t(i)=i;
+i=i+1;
+end
+clear ard
